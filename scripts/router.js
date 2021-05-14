@@ -55,6 +55,7 @@ router.setState = function(page, data) {
   else{
     document.title = "Lab 6 - Web Components";
     document.body.className = "";
-    //get and update h1 to say journal
+    //sets h1
+    document.body.firstElementChild.firstElementChild.innerHTML = "Journal Entries";
   }
 }
