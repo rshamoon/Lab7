@@ -51,11 +51,13 @@ router.setState = function(page, data) {
   else if(page.search("entry") != -1){
     document.body.className = "single-entry";
     let entryPage = document.querySelector('entry-page');
-    entryPage.remove();
-
-    entryPage = document.createElement('entry-page');
-    entryPage.entry = data;
-    document.querySelector('body').appendChild(entryPage);
+    if(data != null){
+      entryPage.remove();
+      entryPage = document.createElement('entry-page');
+      entryPage.entry = data; 
+    
+      document.querySelector('body').appendChild(entryPage);
+    }
 
     document.title = "Entry " + page[page.length - 1];
     //sets h1
