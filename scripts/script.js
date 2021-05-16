@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   fetch('https://cse110lab6.herokuapp.com/entries')
     .then(response => response.json())
     .then(entries => {
-      let counter = 0;
+      let counter = 1;
       entries.forEach(entry => {
         let newPost = document.createElement('journal-entry');
         newPost.entry = entry;
@@ -43,3 +43,13 @@ settingsBtn.addEventListener("click", () => {
   router.setState("/#settings", null);
   history.pushState(-1, null, "/#settings");
 })
+
+let header = document.querySelector("header");
+let clickableHeader = document.querySelector("header h1");
+clickableHeader.addEventListener("click", () => {
+  //sends the page address to the router
+  router.setState("/", null);
+  history.pushState(0, null, "/");
+})
+
+

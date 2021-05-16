@@ -50,6 +50,20 @@ router.setState = function(page, data) {
   //individual entry
   else if(page.search("entry") != -1){
     document.body.className = "single-entry";
+    let entryPage = document.querySelector('entry-page');
+    entryPage.remove();
+
+    entryPage = document.createElement('entry-page');
+    entryPage.entry = data;
+    document.querySelector('body').appendChild(entryPage);
+
+    document.title = "Entry " + page[page.length - 1];
+    //sets h1
+    document.body.firstElementChild.firstElementChild.innerHTML = "Entry " + page[page.length - 1];
+    if(page.search("10") != -1){
+      document.body.firstElementChild.firstElementChild.innerHTML = "Entry 10";
+      document.title = "Entry 10";
+    }
   }
   //homepage
   else{
