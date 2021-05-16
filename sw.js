@@ -18,7 +18,7 @@ if ('serviceWorker' in navigator) {
 }
 
 var CACHE_NAME = 'my-site-cache-v1'
-var urlsToCache = ['https://cse110lab6.herokuapp.com/entries'];
+var urlsToCache = ['https://rshamoon.github.io/Lab7/'];
 
 self.addEventListener('install', function(event) {
     // Perform install steps
